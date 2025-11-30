@@ -1,0 +1,84 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ProgrammerLifeSimulator.ViewModels"
+             xmlns:models="using:ProgrammerLifeSimulator.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="ProgrammerLifeSimulator.Views.CharacterCreationView"
+             x:DataType="vm:CharacterCreationViewModel">
+    
+    <Grid RowDefinitions="Auto,*,Auto" Margin="30, 80, 30, 60" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+        
+        <!-- 标题 -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,30">
+            <TextBlock Text="程序员生活模拟器" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock Text="创建你的程序员角色" FontSize="18" Foreground="#666" HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Spacing="20" VerticalAlignment="Center" MaxWidth="500" HorizontalAlignment="Center">
+            
+            <!-- 姓名输入 -->
+            <StackPanel Spacing="8">
+                <TextBlock Text="角色姓名" FontSize="14" FontWeight="SemiBold" Foreground="#333"/>
+                <TextBox Watermark="输入你的名字" 
+                         Text="{Binding PlayerName}"
+                         Width="300" 
+                         MaxLength="20"
+                         HorizontalAlignment="Left"/>
+                <TextBlock Text="20 字符以内" FontSize="11" Foreground="#999" HorizontalAlignment="Left" Margin="0,-4,0,0"/>
+            </StackPanel>
+            
+            <!-- 初始特质选择 -->
+            <StackPanel Spacing="8">
+                <TextBlock Text="选择你的初始特质" FontSize="14" FontWeight="SemiBold" Foreground="#333"/>
+                <ComboBox ItemsSource="{Binding AvailableTraits}"
+                          SelectedItem="{Binding SelectedTrait}"
+                          Width="300"
+                          HorizontalAlignment="Left">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate DataType="models:Trait">
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+            <!-- 特质描述显示 -->
+            <ContentControl Content="{Binding SelectedTrait}"
+                            HorizontalAlignment="Left">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate DataType="models:Trait">
+                        <Border Background="#F5F5F5" 
+                                MaxWidth="300" 
+                                Padding="15" 
+                                CornerRadius="8" 
+                                BorderBrush="#E0E0E0" 
+                                BorderThickness="1">
+                            <StackPanel Spacing="6">
+                                <TextBlock Text="{Binding Name}" 
+                                           FontSize="16" 
+                                           FontWeight="Bold" 
+                                           Foreground="#1976D2"/>
+                                <TextBlock Text="{Binding Description}" 
+                                           TextWrapping="Wrap" 
+                                           FontSize="14" 
+                                           Foreground="#666"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </StackPanel>
+        
+        <!-- 开始按钮 -->
+        <Button Grid.Row="2" 
+                Content="开始职业生涯" 
+                Command="{Binding StartGameCommand}"
+                FontSize="16"
+                Padding="40,12"
+                HorizontalAlignment="Center"
+                MinWidth="200"
+                Margin="0,50,0,0"/>
+    </Grid>
+</UserControl>

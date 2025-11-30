@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AList_00601_002Ecs_002Fl_003AC_0021_003FUsers_003Flenovo_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E2_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F24372012c6c94138bf3f496e104366ffc8f918_003Fb1_003Ff6aedbce_003FList_00601_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/dotCover/Editor/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\lenovo\AppData\Local\JetBrains\Rider2025.2\resharper-host\temp\Rider\vAny\CoverageData\_ProgrammerLifeSimulator.-2059109209\Snapshot\snapshot.utdcvr</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=96b27518_002Df3b4_002D4bb4_002D88c2_002D7b420646f542/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GameEngineServiceTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4A5CB96E-29E4-465F-B52D-0E65CE04DCC2::net8.0::GameEngineServiceTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f70b50bd_002D974d_002D4085_002D8b36_002De970c1217407/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GameEngineServiceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::4A5CB96E-29E4-465F-B52D-0E65CE04DCC2::net8.0::GameEngineServiceTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;4A5CB96E-29E4-465F-B52D-0E65CE04DCC2/d:ViewModel/f:CharacterCreationViewModelTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;4A5CB96E-29E4-465F-B52D-0E65CE04DCC2/d:ViewModel/f:MainWindowViewModelTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;4A5CB96E-29E4-465F-B52D-0E65CE04DCC2/d:ViewModel/f:GameViewModelTest.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

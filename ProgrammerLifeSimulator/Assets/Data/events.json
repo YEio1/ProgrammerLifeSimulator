@@ -1,0 +1,826 @@
+[
+  {
+    "id": "onboarding_day",
+    "title": "入职第一天",
+    "description": "你加入了新的科技公司，感觉既兴奋又紧张……",
+    "category": "career",
+    "weight": 12,
+    "tags": ["starter"],
+    "requirement": { "maxMonth": 3 },
+    "options": [
+      {
+        "text": "主动认识同事",
+        "effectDescription": "你主动与团队成员交流，氛围变得融洽，你的心情也放松了不少。",
+        "communicationSkillDelta": 5,
+        "stressDelta": -3
+      },
+      {
+        "text": "专心研究代码",
+        "effectDescription": "你沉浸在代码中，加深了对项目的理解，但感觉精神有点紧张。",
+        "programmingSkillDelta": 4,
+        "stressDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "first_project",
+    "title": "第一个项目",
+    "description": "经理分配给你第一个项目，deadline 很紧。",
+    "category": "challenge",
+    "rarity": "Common",
+    "allowRepeat": true,
+    "weight": 10,
+    "tags": ["burnout"],
+    "options": [
+      {
+        "text": "加班完成",
+        "effectDescription": "你通宵达旦，终于在死线前完成了项目，技术有所提升，但身体发出了警报。",
+        "programmingSkillDelta": 5,
+        "stressDelta": 8,
+        "healthDelta": -5
+      },
+      {
+        "text": "申请延期",
+        "effectDescription": "你与经理进行了有效沟通，争取到了更多时间，但同事们对你的积极性略有微词。",
+        "communicationSkillDelta": 4,
+        "motivationDelta": -3
+      }
+    ]
+  },
+  {
+    "id": "code_review",
+    "title": "代码评审",
+    "description": "你的代码需要进行团队评审，你希望留下好印象。",
+    "category": "growth",
+    "weight": 9,
+    "requirement": { "minMonth": 2 },
+    "tags": ["technical"],
+    "options": [
+      {
+        "text": "提前自查",
+        "effectDescription": "你提前进行了细致的自查和测试，发现了几个隐藏错误，提高了调试能力，但耗费了额外精力。",
+        "debuggingSkillDelta": 5,
+        "stressDelta": 2
+      },
+      {
+        "text": "请教资深同事",
+        "effectDescription": "你虚心向资深同事请教，不仅解决了问题，还学到了一些编程技巧。",
+        "communicationSkillDelta": 4,
+        "programmingSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "tech_share",
+    "title": "技术分享会",
+    "description": "公司组织技术分享会，你被邀请分享你的项目经验。",
+    "category": "growth",
+    "weight": 8,
+    "requirement": { "minMonth": 4 },
+    "tags": ["leadership"],
+    "options": [
+      {
+        "text": "精心准备PPT",
+        "effectDescription": "你精心准备，分享非常成功，巩固了专业形象，但因此增加了不少压力。",
+        "communicationSkillDelta": 6,
+        "programmingSkillDelta": 3,
+        "stressDelta": 3
+      },
+      {
+        "text": "即兴分享",
+        "effectDescription": "你临场发挥，虽然略有不足，但你对分享的热情感染了大家，获得了成就感。",
+        "communicationSkillDelta": 3,
+        "motivationDelta": 5
+      },
+      {
+        "text": "婉拒邀请",
+        "effectDescription": "你避免了公众演讲的压力，但错失了在团队中展现自我的机会，略感失落。",
+        "stressDelta": -2,
+        "motivationDelta": -3
+      }
+    ]
+  },
+  {
+    "id": "prod_bug",
+    "title": "生产环境Bug",
+    "description": "你负责的系统在生产环境出现了严重bug，用户投诉不断。",
+    "category": "incident",
+    "allowRepeat": true,
+    "weight": 11,
+    "tags": ["burnout", "crisis"],
+    "options": [
+      {
+        "text": "紧急修复",
+        "effectDescription": "你在巨大的压力下紧急修复了Bug，调试能力暴涨，但健康状况也受到了严重影响。",
+        "debuggingSkillDelta": 8,
+        "stressDelta": 10,
+        "healthDelta": -5
+      },
+      {
+        "text": "分析根因再修复",
+        "effectDescription": "你没有急于动手，而是深入分析了算法逻辑，从根本上解决了问题，但依然感到不小的压力。",
+        "debuggingSkillDelta": 5,
+        "algorithmSkillDelta": 3,
+        "stressDelta": 5
+      }
+    ]
+  },
+  {
+    "id": "tech_selection",
+    "title": "技术选型会议",
+    "description": "团队需要选择新的技术栈，你被邀请参与讨论。",
+    "category": "collaboration",
+    "weight": 7,
+    "requirement": { "minMonth": 5 },
+    "options": [
+      {
+        "text": "深入研究后提出建议",
+        "effectDescription": "你进行了深入研究，提出了基于数据支持的建议，展现了全面的技术和沟通能力。",
+        "algorithmSkillDelta": 4,
+        "communicationSkillDelta": 5,
+        "programmingSkillDelta": 3
+      },
+      {
+        "text": "跟随主流选择",
+        "effectDescription": "你选择了最流行的技术，虽然没有特别突出，但保证了项目的顺利进行，压力也比较小。",
+        "programmingSkillDelta": 2,
+        "stressDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "code_refactor",
+    "title": "代码重构",
+    "description": "你发现项目中有很多遗留代码需要重构，但时间紧迫。",
+    "category": "challenge",
+    "allowRepeat": true,
+    "weight": 9,
+    "tags": ["technical"],
+    "options": [
+      {
+        "text": "加班重构",
+        "effectDescription": "你投入了数个夜晚重构了核心模块，代码质量大幅提高，但你感到精疲力尽。",
+        "programmingSkillDelta": 7,
+        "debuggingSkillDelta": 4,
+        "stressDelta": 6,
+        "healthDelta": -3
+      },
+      {
+        "text": "逐步重构",
+        "effectDescription": "你在日常工作中见缝插针进行重构，代码得到改善，但重构带来的额外工作量让你稍有压力。",
+        "programmingSkillDelta": 4,
+        "stressDelta": 2
+      },
+      {
+        "text": "暂时搁置",
+        "effectDescription": "你选择暂时放下重构，压力减轻，但你知道这是在累积技术债务，感到有些沮丧。",
+        "stressDelta": -3,
+        "motivationDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "interview_colleague",
+    "title": "面试新同事",
+    "description": "你被安排参与技术面试，需要评估候选人的能力。",
+    "category": "career",
+    "weight": 6,
+    "requirement": { "minMonth": 8 },
+    "tags": ["leadership"],
+    "options": [
+      {
+        "text": "设计算法题",
+        "effectDescription": "你设计了巧妙的算法题来考察候选人，你的算法思维得到了锻炼，也提高了面试官的沟通技巧。",
+        "algorithmSkillDelta": 5,
+        "communicationSkillDelta": 3
+      },
+      {
+        "text": "考察项目经验",
+        "effectDescription": "你通过细致的交流考察了候选人的实际项目经验，提升了沟通效率，也回顾了自身的编程知识。",
+        "communicationSkillDelta": 6,
+        "programmingSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "performance_optimization",
+    "title": "性能优化",
+    "description": "系统响应变慢，需要优化性能。",
+    "category": "technical",
+    "allowRepeat": true,
+    "weight": 8,
+    "tags": ["technical"],
+    "options": [
+      {
+        "text": "深入分析性能瓶颈",
+        "effectDescription": "你使用专业的分析工具找到了深层瓶颈，解决了复杂问题，但过程非常烧脑。",
+        "algorithmSkillDelta": 7,
+        "debuggingSkillDelta": 5,
+        "stressDelta": 4
+      },
+      {
+        "text": "快速优化",
+        "effectDescription": "你应用了一些简单的优化技巧，性能有所提升，但未从根本解决问题。",
+        "programmingSkillDelta": 4,
+        "debuggingSkillDelta": 3,
+        "stressDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "learn_new_tech",
+    "title": "学习新技术",
+    "description": "公司引入了新的技术框架，需要学习。",
+    "category": "growth",
+    "allowRepeat": true,
+    "weight": 7,
+    "tags": ["growth"],
+    "options": [
+      {
+        "text": "系统学习",
+        "effectDescription": "你投入大量时间进行系统学习和实践，技术栈得到深度扩展，但压力也有所增加。",
+        "programmingSkillDelta": 6,
+        "algorithmSkillDelta": 4,
+        "stressDelta": 3
+      },
+      {
+        "text": "边用边学",
+        "effectDescription": "你在项目中摸索着使用新技术，勉强完成了任务，调试过程让你学到了一些东西。",
+        "programmingSkillDelta": 3,
+        "debuggingSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "team_conflict",
+    "title": "团队冲突",
+    "description": "团队成员对技术方案有分歧，气氛紧张。",
+    "category": "culture",
+    "allowRepeat": true,
+    "weight": 8,
+    "tags": ["culture"],
+    "options": [
+      {
+        "text": "主动协调",
+        "effectDescription": "你主动介入，通过有效的沟通解决了团队矛盾，虽然耗费精力，但你获得了大家的尊重。",
+        "communicationSkillDelta": 8,
+        "stressDelta": 5,
+        "motivationDelta": 3
+      },
+      {
+        "text": "保持中立",
+        "effectDescription": "你选择不参与争吵，避免了卷入压力，但看到团队分裂让你感到士气低落。",
+        "stressDelta": -2,
+        "motivationDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "annual_review",
+    "title": "年度考核",
+    "description": "年度绩效考核即将开始，你需要准备述职报告。",
+    "category": "career",
+    "weight": 6,
+    "requirement": { "minMonth": 12 },
+    "tags": ["career"],
+    "options": [
+      {
+        "text": "详细准备",
+        "effectDescription": "你精心准备了述职报告，清晰展现了你的贡献，成功获得加薪，但准备过程很辛苦。",
+        "communicationSkillDelta": 5,
+        "salaryDelta": 2000,
+        "stressDelta": 3
+      },
+      {
+        "text": "简单准备",
+        "effectDescription": "你只是简单写了报告，虽然拿到了一点加薪，但过程轻松。",
+        "salaryDelta": 1000,
+        "stressDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "open_source",
+    "title": "开源贡献",
+    "description": "你发现一个开源项目的bug，考虑是否提交修复。",
+    "category": "innovation",
+    "weight": 5,
+    "tags": ["innovation"],
+    "options": [
+      {
+        "text": "提交PR",
+        "effectDescription": "你向开源项目提交了高质量的修复，得到了社区的认可，成就感大增。",
+        "programmingSkillDelta": 5,
+        "debuggingSkillDelta": 4,
+        "motivationDelta": 6
+      },
+      {
+        "text": "只修复本地",
+        "effectDescription": "你只在本地解决了问题，避免了提交PR的麻烦，调试能力略有提升。",
+        "debuggingSkillDelta": 3
+      }
+    ]
+  },
+  {
+    "id": "tech_debt",
+    "title": "技术债务",
+    "description": "项目积累了大量技术债务，需要处理。",
+    "category": "challenge",
+    "weight": 7,
+    "tags": ["technical"],
+    "options": [
+      {
+        "text": "制定重构计划",
+        "effectDescription": "你成功说服团队并制定了详细的重构计划，展示了你的技术远见和影响力。",
+        "programmingSkillDelta": 5,
+        "algorithmSkillDelta": 3,
+        "communicationSkillDelta": 4
+      },
+      {
+        "text": "先处理紧急的",
+        "effectDescription": "你快速处理了最紧迫的问题，但技术债务仍未解决，让你感到些许压力。",
+        "debuggingSkillDelta": 4,
+        "stressDelta": 3
+      }
+    ]
+  },
+  {
+    "id": "cross_team",
+    "title": "跨部门协作",
+    "description": "需要与其他部门协作完成一个大型项目。",
+    "category": "collaboration",
+    "weight": 6,
+    "requirement": { "minMonth": 9 },
+    "options": [
+      {
+        "text": "主动沟通协调",
+        "effectDescription": "你主动承担了沟通桥梁的角色，确保了跨部门协作的顺利进行，获得了成就感。",
+        "communicationSkillDelta": 7,
+        "programmingSkillDelta": 3,
+        "motivationDelta": 4
+      },
+      {
+        "text": "被动配合",
+        "effectDescription": "你只是完成了自己的部分，被动的配合使得协作效率低下，也让你感到不快。",
+        "communicationSkillDelta": 2,
+        "stressDelta": 3
+      }
+    ]
+  },
+  {
+    "id": "tech_blog",
+    "title": "技术博客",
+    "description": "你考虑写一篇技术博客分享经验。",
+    "category": "growth",
+    "weight": 5,
+    "tags": ["growth"],
+    "options": [
+      {
+        "text": "认真撰写",
+        "effectDescription": "你花费大量时间撰写了高质量的技术文章，提升了知名度，并对自己的技术进行了梳理。",
+        "communicationSkillDelta": 6,
+        "programmingSkillDelta": 4,
+        "motivationDelta": 5
+      },
+      {
+        "text": "简单记录",
+        "effectDescription": "你简单记录了一些心得，虽然效果有限，但也是一种积累。",
+        "communicationSkillDelta": 2,
+        "programmingSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "code_inspection",
+    "title": "代码审查",
+    "description": "你需要审查同事提交的代码。",
+    "category": "technical",
+    "allowRepeat": true,
+    "weight": 7,
+    "tags": ["technical"],
+    "options": [
+      {
+        "text": "仔细审查",
+        "effectDescription": "你发现了几个关键的逻辑漏洞，并提出了建设性修改意见，得到了团队的赞赏和尊重，但审查过程有点耗神。",
+        "debuggingSkillDelta": 5,
+        "communicationSkillDelta": 4,
+        "stressDelta": 2
+      },
+      {
+        "text": "快速通过",
+        "effectDescription": "你快速通过了审查，避免了额外工作，但心里有些不安。",
+        "stressDelta": -2,
+        "motivationDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "tech_conference",
+    "title": "技术大会",
+    "description": "公司派你参加技术大会，可以学习新技术。",
+    "category": "growth",
+    "weight": 6,
+    "requirement": { "minMonth": 10 },
+    "tags": ["growth"],
+    "options": [
+      {
+        "text": "积极参与",
+        "effectDescription": "你在大会上与各路大牛积极交流，收获了最新的技术知识，感觉充满了能量。",
+        "programmingSkillDelta": 5,
+        "algorithmSkillDelta": 5,
+        "communicationSkillDelta": 6,
+        "motivationDelta": 5
+      },
+      {
+        "text": "走马观花",
+        "effectDescription": "你只是简单听了几个演讲，技术上略有收获。",
+        "programmingSkillDelta": 2,
+        "algorithmSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "project_launch",
+    "title": "项目上线",
+    "description": "你负责的项目即将上线，需要确保一切顺利。",
+    "category": "challenge",
+    "weight": 8,
+    "tags": ["crisis"],
+    "options": [
+      {
+        "text": "熬夜保障",
+        "effectDescription": "你为了项目上线通宵达旦，虽然获得了额外的奖金，但透支了健康，压力巨大。",
+        "debuggingSkillDelta": 6,
+        "stressDelta": 8,
+        "healthDelta": -5,
+        "salaryDelta": 1500
+      },
+      {
+        "text": "提前准备",
+        "effectDescription": "你提前做好了周密的上线准备和回滚方案，减轻了临时的压力。",
+        "debuggingSkillDelta": 4,
+        "programmingSkillDelta": 3,
+        "stressDelta": 3
+      }
+    ]
+  },
+  {
+    "id": "career_planning",
+    "title": "职业规划",
+    "description": "你开始思考自己的职业发展方向。",
+    "category": "career",
+    "weight": 5,
+    "requirement": { "minMonth": 15 },
+    "tags": ["career"],
+    "options": [
+      {
+        "text": "专注技术深度",
+        "effectDescription": "你决定专注于成为一名资深专家，投入大量精力打磨核心技术。",
+        "algorithmSkillDelta": 6,
+        "programmingSkillDelta": 5,
+        "motivationDelta": 4
+      },
+      {
+        "text": "转向管理",
+        "effectDescription": "你开始学习项目管理和领导力，为转岗做准备，对未来充满期待。",
+        "communicationSkillDelta": 8,
+        "motivationDelta": 3
+      },
+      {
+        "text": "保持现状",
+        "effectDescription": "你对现状满意，选择佛系工作，压力大幅减轻。",
+        "stressDelta": -3
+      }
+    ]
+  },
+  {
+    "id": "burnout",
+    "title": "工作倦怠",
+    "description": "连续加班让你感到疲惫，工作效率下降。",
+    "category": "wellness",
+    "weight": 6,
+    "tags": ["health", "burnout"],
+    "requirement": { "minStress": 60 },
+    "options": [
+      {
+        "text": "请假休息",
+        "effectDescription": "你果断请假，好好放松了身心，找回了工作的热情。",
+        "healthDelta": 10,
+        "stressDelta": -8,
+        "motivationDelta": 5
+      },
+      {
+        "text": "坚持工作",
+        "effectDescription": "你咬牙坚持，工作完成了，但精神状态和身体状况都进一步恶化。",
+        "healthDelta": -5,
+        "stressDelta": 5,
+        "motivationDelta": -3
+      }
+    ]
+  },
+  {
+    "id": "skill_upgrade",
+    "title": "技能提升",
+    "description": "你决定投入时间提升自己的技能。",
+    "category": "growth",
+    "allowRepeat": true,
+    "weight": 7,
+    "tags": ["growth"],
+    "options": [
+      {
+        "text": "系统学习算法",
+        "effectDescription": "你投入了整个周末深入研究高级算法，成功地破解了几个复杂的难题，感觉自己脱胎换骨。",
+        "algorithmSkillDelta": 8,
+        "stressDelta": 3
+      },
+      {
+        "text": "学习新框架",
+        "effectDescription": "你快速掌握了最新的前端框架，开发效率明显提高。",
+        "programmingSkillDelta": 6,
+        "debuggingSkillDelta": 3
+      },
+      {
+        "text": "提升沟通能力",
+        "effectDescription": "通过参加公开演讲训练，你的表达能力得到认可，团队氛围变得更加积极。",
+        "communicationSkillDelta": 7,
+        "motivationDelta": 4
+      }
+    ]
+  },
+  {
+    "id": "deadline_rush",
+    "title": "死亡迭代",
+    "description": "新项目突然插入，需求又多又急。",
+    "category": "challenge",
+    "rarity": "Uncommon",
+    "allowRepeat": true,
+    "weight": 10,
+    "tags": ["burnout"],
+    "options": [
+      {
+        "text": "带头梳理任务",
+        "effectDescription": "你在压力下带头梳理任务，沟通能力得到锻炼，但压力也随之增加。",
+        "communicationSkillDelta": 4,
+        "programmingSkillDelta": 3,
+        "stressDelta": 5
+      },
+      {
+        "text": "加班硬刚",
+        "effectDescription": "你通宵达旦完成项目，编程和调试能力大幅提升，但健康严重受损。",
+        "programmingSkillDelta": 7,
+        "debuggingSkillDelta": 4,
+        "healthDelta": -6,
+        "stressDelta": 7
+      },
+      {
+        "text": "推动需求降级",
+        "effectDescription": "你与产品经理沟通降低需求优先级，减轻了压力但影响了积极性。",
+        "communicationSkillDelta": 5,
+        "stressDelta": -3,
+        "motivationDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "wellness_reminder",
+    "title": "健康警报",
+    "description": "持续的疲惫让你不得不关注身体。",
+    "category": "wellness",
+    "weight": 6,
+    "tags": ["health"],
+    "requirement": { "minStress": 60 },
+    "options": [
+      {
+        "text": "立刻休假",
+        "effectDescription": "你果断请假，好好放松了身心，找回了工作的热情。",
+        "healthDelta": 12,
+        "stressDelta": -10,
+        "motivationDelta": 4
+      },
+      {
+        "text": "调整作息",
+        "effectDescription": "你调整了作息时间，健康状况有所改善，压力也减轻了。",
+        "healthDelta": 6,
+        "stressDelta": -4
+      }
+    ]
+  },
+  {
+    "id": "random_coffee_chat",
+    "title": "茶水间的灵感",
+    "description": "休息时与陌生同事闲聊，突然蹦出一个点子。",
+    "category": "ambient",
+    "isPassive": true,
+    "allowRepeat": true,
+    "weight": 7,
+    "tags": ["innovation"],
+    "passiveEffect": {
+      "effectDescription": "休息时的闲聊让你灵感迸发，心情愉悦。",
+      "motivationDelta": 5,
+      "innovationDelta": 4,
+      "stressDelta": -1
+    }
+  },
+  {
+    "id": "anonymous_praise",
+    "title": "匿名好评",
+    "description": "绩效系统出现一条来自匿名同事的好评。",
+    "category": "ambient",
+    "isPassive": true,
+    "allowRepeat": false,
+    "weight": 5,
+    "passiveEffect": {
+      "effectDescription": "收到同事的匿名好评让你备受鼓舞，压力减轻。",
+      "motivationDelta": 6,
+      "stressDelta": -3,
+      "leadershipDelta": 4
+    }
+  },
+  {
+    "id": "side_project",
+    "title": "副业灵感",
+    "description": "你想把一个副项目做成产品。",
+    "category": "innovation",
+    "weight": 7,
+    "tags": ["innovation"],
+    "options": [
+      {
+        "text": "夜间冲刺原型",
+        "effectDescription": "你在夜间加班开发原型，技术有所提升但健康受损。",
+        "programmingSkillDelta": 4,
+        "debuggingSkillDelta": 3,
+        "healthDelta": -5,
+        "motivationDelta": 6
+      },
+      {
+        "text": "邀请伙伴加入",
+        "effectDescription": "你邀请同事一起开发，沟通能力得到锻炼。",
+        "communicationSkillDelta": 5,
+        "programmingSkillDelta": 2
+      }
+    ]
+  },
+  {
+    "id": "promotion_assessment",
+    "title": "晋升答辩",
+    "description": "你拿到了晋升面试的名额。",
+    "category": "career",
+    "weight": 6,
+    "requirement": { "minMonth": 18, "minSkillTotal": 260 },
+    "options": [
+      {
+        "text": "全力准备材料",
+        "effectDescription": "你精心准备了述职报告，清晰展现了你的贡献，成功获得加薪，但准备过程很辛苦。",
+        "communicationSkillDelta": 6,
+        "stressDelta": 4,
+        "salaryDelta": 2000
+      },
+      {
+        "text": "顺其自然",
+        "effectDescription": "你简单准备了报告，压力较小但加薪幅度有限。",
+        "stressDelta": -3,
+        "salaryDelta": 1000
+      }
+    ]
+  },
+  {
+    "id": "midnight_bug_fairy",
+    "title": "午夜小妖精",
+    "description": "系统突然又好了，谁也不知道为什么。",
+    "category": "ambient",
+    "isPassive": true,
+    "allowRepeat": true,
+    "weight": 4,
+    "passiveEffect": {
+      "effectDescription": "系统莫名其妙恢复正常，让你松了口气。",
+      "debuggingSkillDelta": 2,
+      "stressDelta": -5,
+      "healthDelta": 2
+    }
+  },
+  {
+    "id": "office_cat_visit",
+    "title": "办公室猫巡视",
+    "description": "公司吉祥物猫咪在键盘上踩过，留下了一串不可名状的指令。",
+    "category": "ambient",
+    "rarity": "Uncommon",
+    "isPassive": true,
+    "allowRepeat": true,
+    "weight": 6,
+    "tags": ["quirky"],
+    "passiveEffect": {
+      "effectDescription": "猫咪的意外造访让你心情愉悦，压力减轻。",
+      "motivationDelta": 3,
+      "stressDelta": -2,
+      "innovationDelta": 2
+    }
+  },
+  {
+    "id": "glitch_in_matrix",
+    "title": "矩阵闪烁",
+    "description": "显示器短暂熄灭，你仿佛看见代码在自我重写。",
+    "category": "ambient",
+    "rarity": "Rare",
+    "isPassive": true,
+    "allowRepeat": false,
+    "weight": 2,
+    "tags": ["rare", "cosmic"],
+    "passiveEffect": {
+      "effectDescription": "奇异的视觉体验激发了你的创造力。",
+      "innovationDelta": 6,
+      "motivationDelta": 4,
+      "stressDelta": -2
+    }
+  },
+  {
+    "id": "streamer_coding_show",
+    "title": "直播邀约",
+    "description": "知名技术主播邀请你一起连麦 debug，粉丝众多。",
+    "category": "spotlight",
+    "rarity": "Rare",
+    "weight": 4,
+    "tags": ["rare", "leadership"],
+    "options": [
+      {
+        "text": "霸气上镜",
+        "effectDescription": "你在直播中展现了出色的技术能力，获得广泛认可。",
+        "communicationSkillDelta": 6,
+        "debuggingSkillDelta": 4,
+        "motivationDelta": 8,
+        "stressDelta": 5
+      },
+      {
+        "text": "低调拒绝",
+        "effectDescription": "你婉拒了直播邀请，避免了压力但错失了展示机会。",
+        "stressDelta": -3,
+        "motivationDelta": 1
+      }
+    ]
+  },
+  {
+    "id": "retro_hackathon",
+    "title": "复古游戏黑客松",
+    "description": "周末黑客松主题是给 8 位机写 AI。",
+    "category": "innovation",
+    "rarity": "Uncommon",
+    "allowRepeat": true,
+    "weight": 5,
+    "tags": ["innovation", "quirky"],
+    "options": [
+      {
+        "text": "全力冲刺",
+        "effectDescription": "你在黑客松中全力投入，技术能力得到锻炼。",
+        "programmingSkillDelta": 5,
+        "algorithmSkillDelta": 4,
+        "healthDelta": -4,
+        "motivationDelta": 4
+      },
+      {
+        "text": "负责复盘分享",
+        "effectDescription": "你负责活动总结和分享，沟通能力得到提升。",
+        "communicationSkillDelta": 5,
+        "innovationDelta": 3
+      }
+    ]
+  },
+  {
+    "id": "secret_investor_email",
+    "title": "神秘投资人邮件",
+    "description": "有人想投你在做的副项目，但只给你 24 小时考虑时间。",
+    "category": "career",
+    "rarity": "Epic",
+    "weight": 3,
+    "tags": ["rare", "innovation"],
+    "options": [
+      {
+        "text": "接受邀约",
+        "effectDescription": "你接受了投资，薪资大幅提升但压力也随之增加。",
+        "salaryDelta": 4000,
+        "stressDelta": 6
+      },
+      {
+        "text": "婉拒邀请",
+        "effectDescription": "你婉拒了投资邀请，保持了现状。",
+        "motivationDelta": 3,
+        "stressDelta": -2
+      }
+    ]
+  },
+  {
+    "id": "city_lottery_bonus",
+    "title": "城市补贴抽签",
+    "description": "市里随机发放人才补贴，你莫名其妙获得通知。",
+    "category": "ambient",
+    "rarity": "Uncommon",
+    "isPassive": true,
+    "allowRepeat": false,
+    "weight": 3,
+    "tags": ["quirky"],
+    "passiveEffect": {
+      "effectDescription": "意外获得城市人才补贴，让你心情愉悦。",
+      "salaryDelta": 3000,
+      "motivationDelta": 5,
+      "stressDelta": -1
+    }
+  }
+]
