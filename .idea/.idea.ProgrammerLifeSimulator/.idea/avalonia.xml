@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="ProgrammerLifeSimulator/App.axaml" value="ProgrammerLifeSimulator/ProgrammerLifeSimulator.csproj" />
+        <entry key="ProgrammerLifeSimulator/Views/CharacterCreationView.axaml" value="ProgrammerLifeSimulator/ProgrammerLifeSimulator.csproj" />
+        <entry key="ProgrammerLifeSimulator/Views/GameView.axaml" value="ProgrammerLifeSimulator/ProgrammerLifeSimulator.csproj" />
+        <entry key="ProgrammerLifeSimulator/Views/MainWindow.axaml" value="ProgrammerLifeSimulator/ProgrammerLifeSimulator.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

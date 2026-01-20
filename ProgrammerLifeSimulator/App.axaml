@@ -1,0 +1,48 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:ProgrammerLifeSimulator"
+             x:Class="ProgrammerLifeSimulator.App"
+             RequestedThemeVariant="Dark">
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+        
+        <Style Selector="Window">
+            <Setter Property="Background" Value="#121212"/>
+            <Setter Property="FontFamily" Value="Cascadia Code, Consolas, Courier New, Microsoft YaHei"/>
+        </Style>
+
+        <Style Selector="ProgressBar">
+            <Setter Property="Height" Value="10"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Background" Value="#2A2A2A"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Value" Duration="0:0:0.4"/>
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <Style Selector="Button.OptionBtn">
+            <Setter Property="Background" Value="#2D2D2D"/>
+            <Setter Property="BorderBrush" Value="#3E3E3E"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="15,12"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Button.OptionBtn:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#3D3D3D"/>
+            <Setter Property="BorderBrush" Value="#007ACC"/>
+        </Style>
+    </Application.Styles>
+</Application>

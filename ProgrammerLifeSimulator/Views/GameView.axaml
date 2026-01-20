@@ -1,0 +1,173 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:ProgrammerLifeSimulator.ViewModels"
+             xmlns:conv="using:ProgrammerLifeSimulator.Converters"
+             x:Class="ProgrammerLifeSimulator.Views.GameView"
+             x:DataType="vm:GameViewModel">
+
+    <UserControl.Resources>
+        <conv:RarityToColorConverter x:Key="RarityToColorConverter"/>
+        <conv:StressToColorConverter x:Key="StressToColorConverter"/>
+    </UserControl.Resources>
+
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontStyle" Value="Normal" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid ColumnDefinitions="320, *" Margin="25">
+        
+        <Border Grid.Column="0" Background="#1E1E1E" CornerRadius="12" Padding="20" 
+                BoxShadow="0 10 20 0 #40000000" Margin="0,0,20,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Spacing="18">
+                    <TextBlock Text="TERMINAL STATUS" FontSize="14" FontWeight="Bold" Foreground="#666" LetterSpacing="2"/>
+                    
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="{Binding Player.Name}" FontSize="22" FontWeight="Bold" Foreground="White"/>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="💰" Foreground="Gold"/>
+                            <TextBlock Text="{Binding Player.Salary, StringFormat='月薪: ¥{0}'}" Foreground="#AAA"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Separator Background="#333"/>
+
+                    <TextBlock Text="CORE SKILLS" FontSize="12" Foreground="#007ACC" FontWeight="Bold"/>
+                    <StackPanel Spacing="12">
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="💻 编程" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.ProgrammingSkill}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.ProgrammingSkill}" Maximum="100" Foreground="#4CAF50"/>
+                        </StackPanel>
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="🧠 算法" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.AlgorithmSkill}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.AlgorithmSkill}" Maximum="100" Foreground="#2196F3"/>
+                        </StackPanel>
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="💬 沟通" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.CommunicationSkill}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.CommunicationSkill}" Maximum="100" Foreground="#FF9800"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Separator Background="#333"/>
+
+                    <TextBlock Text="VITALS" FontSize="12" Foreground="#007ACC" FontWeight="Bold"/>
+                    <StackPanel Spacing="12">
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="🔥 动力" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.Motivation}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.Motivation}" Maximum="100" Foreground="#00BCD4"/>
+                        </StackPanel>
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="⚡ 压力" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.Stress}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.Stress}" 
+                                         Maximum="100" 
+                                         Foreground="{Binding Player.Stress, Converter={StaticResource StressToColorConverter}}"/>
+                        </StackPanel>
+                        <StackPanel Spacing="4">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <TextBlock Text="❤️ 健康" Foreground="#EEE"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Player.Health}" Foreground="#EEE"/>
+                            </Grid>
+                            <ProgressBar Value="{Binding Player.Health}" Maximum="100" Foreground="#F44336"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Grid Grid.Column="1" RowDefinitions="Auto, *, Auto">
+            
+            <Border Grid.Row="0" Background="#1E1E1E" CornerRadius="8" Padding="15" Margin="0,0,0,20"
+                    IsVisible="{Binding Ending, Converter={x:Static ObjectConverters.IsNull}}">
+                <TextBlock Text="{Binding Month, StringFormat='第 {0} / 36 个月'}" 
+                           FontSize="16" FontWeight="Bold" Foreground="#007ACC" HorizontalAlignment="Center"/>
+            </Border>
+
+            <Panel Grid.Row="1">
+                <Border Background="#252526" CornerRadius="15" Padding="35" BorderThickness="2"
+                        BorderBrush="{Binding CurrentEvent.Rarity, Converter={StaticResource RarityToColorConverter}}"
+                        IsVisible="{Binding Ending, Converter={x:Static ObjectConverters.IsNull}}">
+                    <Grid RowDefinitions="Auto, *, Auto">
+                        <StackPanel Grid.Row="0" Spacing="12">
+                            <Border Background="#333" HorizontalAlignment="Left" Padding="10,4" CornerRadius="4">
+                                <TextBlock Text="{Binding CurrentEvent.Rarity}" FontSize="11" FontWeight="Bold" Foreground="#DDD"/>
+                            </Border>
+                            <TextBlock Text="{Binding CurrentEvent.Title}" FontSize="32" FontWeight="Bold" Foreground="White"/>
+                        </StackPanel>
+
+                        <ScrollViewer Grid.Row="1" Margin="0,25">
+                            <TextBlock Text="{Binding CurrentEvent.Description}" 
+                                       TextWrapping="Wrap" FontSize="18" LineHeight="30" Foreground="#CCCCCC"/>
+                        </ScrollViewer>
+
+                        <ItemsControl Grid.Row="2" ItemsSource="{Binding CurrentEvent.Options}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Classes="OptionBtn" Margin="0,6" HorizontalAlignment="Stretch"
+                                            Command="{Binding $parent[UserControl].((vm:GameViewModel)DataContext).SelectOptionCommand}"
+                                            CommandParameter="{Binding}"
+                                            IsEnabled="{Binding !$parent[UserControl].((vm:GameViewModel)DataContext).IsProcessing}">
+                                        <Grid ColumnDefinitions="*, Auto">
+                                            <TextBlock Text="{Binding Text}" FontSize="16" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="确认 →" FontSize="12" Foreground="#555" Margin="20,0,0,0"/>
+                                        </Grid>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </Border>
+
+                <Border Background="#1A1A1A" CornerRadius="15" Padding="45" BorderThickness="2" BorderBrush="#007ACC"
+                        IsVisible="{Binding Ending, Converter={x:Static ObjectConverters.IsNotNull}}">
+                    <StackPanel Spacing="30" VerticalAlignment="Center">
+                        <TextBlock Text="职 业 生 涯 终 点" FontSize="14" Foreground="#555" LetterSpacing="10" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Ending.Title}" FontSize="48" FontWeight="Heavy" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Ending.Description}" TextWrapping="Wrap" FontSize="18" LineHeight="32" Foreground="#BBB" TextAlignment="Center" MaxWidth="600"/>
+                        <Separator Background="#333" Margin="0,20"/>
+                        <Button Content="重新游玩" 
+                                Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).NavigateToSetupCommand}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="280"
+                                Height="60"
+                                FontSize="24" 
+                                FontWeight="Normal"
+                                Background="#007ACC"
+                                Foreground="White"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                CornerRadius="6"/>
+                    </StackPanel>
+                </Border>
+            </Panel>
+
+            <StackPanel Grid.Row="2" Margin="0,20,0,0">
+                
+                <Border Padding="15" CornerRadius="8" Background="#102A44"
+                        IsVisible="{Binding EventResultMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="[系统消息]:" FontWeight="Bold" Foreground="#007ACC"/>
+                        <TextBlock Text="{Binding EventResultMessage}" Foreground="#90CAF9"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
